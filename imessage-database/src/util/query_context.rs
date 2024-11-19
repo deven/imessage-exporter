@@ -151,8 +151,8 @@ mod use_tests {
 
     #[test]
     fn can_create_start() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         let mut context = QueryContext::default();
         context.set_start("2020-01-01").unwrap();
@@ -177,8 +177,8 @@ mod use_tests {
 
     #[test]
     fn can_create_end() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         let mut context = QueryContext::default();
         context.set_end("2020-01-01").unwrap();
@@ -201,8 +201,8 @@ mod use_tests {
 
     #[test]
     fn can_create_both() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         let mut context = QueryContext::default();
         context.set_start("2020-01-01").unwrap();

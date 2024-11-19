@@ -1150,8 +1150,8 @@ mod tests {
 
     #[test]
     fn can_get_time_valid() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1175,8 +1175,8 @@ mod tests {
 
     #[test]
     fn can_get_time_invalid() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1224,8 +1224,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_from_me_normal() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1247,8 +1247,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_from_me_normal_deleted() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1271,8 +1271,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_from_me_normal_read() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1296,8 +1296,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_from_them_normal() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1321,8 +1321,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_from_them_normal_read() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1351,8 +1351,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_from_them_custom_name_read() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let mut options = fake_options();
@@ -1382,8 +1382,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_shareplay() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1405,8 +1405,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_announcement() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1429,8 +1429,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_announcement_custom_name() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let mut options = fake_options();
@@ -1453,8 +1453,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_tapback_me() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1477,8 +1477,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_tapback_them() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1503,8 +1503,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_tapback_custom_emoji() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1530,8 +1530,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_tapback_custom_sticker() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1557,8 +1557,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_started_sharing_location_me() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1580,8 +1580,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_stopped_sharing_location_me() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1603,8 +1603,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_started_sharing_location_them() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1627,8 +1627,8 @@ mod tests {
 
     #[test]
     fn can_format_txt_stopped_sharing_location_them() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1953,8 +1953,8 @@ mod balloon_format_tests {
 
     #[test]
     fn can_format_txt_check_in_timer() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -1982,8 +1982,8 @@ mod balloon_format_tests {
 
     #[test]
     fn can_format_txt_check_in_timer_late() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -2011,8 +2011,8 @@ mod balloon_format_tests {
 
     #[test]
     fn can_format_txt_accepted_check_in() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -2136,8 +2136,8 @@ mod edited_tests {
 
     #[test]
     fn can_format_txt_conversion_final_unsent() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -2194,8 +2194,8 @@ mod edited_tests {
 
     #[test]
     fn can_format_txt_conversion_no_edits() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
@@ -2231,8 +2231,8 @@ mod edited_tests {
 
     #[test]
     fn can_format_txt_conversion_fully_unsent() {
-        // Set timezone to PST for consistent Local time
-        set_var("TZ", "PST");
+        // Set timezone to America/Los_Angeles for consistent Local time
+        set_var("TZ", "America/Los_Angeles");
 
         // Create exporter
         let options = fake_options();
