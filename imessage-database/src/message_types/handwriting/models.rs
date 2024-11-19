@@ -348,6 +348,7 @@ mod tests {
     use std::io::Read;
 
     #[test]
+    #[rustfmt::skip]
     fn test_parse_handwritten_from_payload() {
         let protobuf_path = current_dir()
             .unwrap()
