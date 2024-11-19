@@ -428,7 +428,7 @@ mod typedstream_tests {
         let typedstream_path = current_dir()
             .unwrap()
             .as_path()
-            .join("test_data/typedstream/Multipart");
+            .join("test_data/typedstream/MultiPart");
         let mut file = File::open(typedstream_path).unwrap();
         let mut bytes = vec![];
         file.read_to_end(&mut bytes).unwrap();
