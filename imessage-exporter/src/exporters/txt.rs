@@ -662,7 +662,7 @@ impl<'a> Writer<'a> for TXT<'a> {
         None
     }
 
-    fn format_attributed(&'a self, msg: &'a str, _: &'a TextEffect) -> Cow<str> {
+    fn format_attributed(&'a self, msg: &'a str, _: &'a TextEffect) -> Cow<'a, str> {
         // There isn't really a way to represent formatted text in a plain text export
         Cow::Borrowed(msg)
     }

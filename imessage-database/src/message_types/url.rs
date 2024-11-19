@@ -62,7 +62,7 @@ impl<'a> BalloonProvider<'a> for URLMessage<'a> {
 
 impl<'a> URLMessage<'a> {
     /// Gets the subtype of the URL message based on the payload
-    pub fn get_url_message_override(payload: &'a Value) -> Result<URLOverride, PlistParseError> {
+    pub fn get_url_message_override(payload: &'a Value) -> Result<URLOverride<'a>, PlistParseError> {
         if let Ok(balloon) = CollaborationMessage::from_map(payload) {
             return Ok(URLOverride::Collaboration(balloon));
         }

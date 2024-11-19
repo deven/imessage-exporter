@@ -877,7 +877,7 @@ impl<'a> Writer<'a> for HTML<'a> {
         None
     }
 
-    fn format_attributed(&'a self, text: &'a str, attribute: &'a TextEffect) -> Cow<str> {
+    fn format_attributed(&'a self, text: &'a str, attribute: &'a TextEffect) -> Cow<'a, str> {
         match attribute {
             TextEffect::Default => Cow::Borrowed(text),
             TextEffect::Mention(mentioned) => Cow::Owned(self.format_mention(text, mentioned)),
