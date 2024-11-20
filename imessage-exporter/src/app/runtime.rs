@@ -14,7 +14,7 @@ use crate::{
         attachment_manager::AttachmentManager, converter::Converter, error::RuntimeError,
         export_type::ExportType, options::Options, sanitizers::sanitize_filename,
     },
-    Exporter, HTML, TXT,
+    Exporter, HTML, JSON, TXT,
 };
 
 use imessage_database::{
@@ -357,6 +357,9 @@ impl Config {
                 }
                 ExportType::Txt => {
                     TXT::new(self)?.iter_messages()?;
+                }
+                ExportType::Json => {
+                    JSON::new(self)?.iter_messages()?;
                 }
             }
         }
