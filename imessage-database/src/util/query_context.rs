@@ -2,13 +2,14 @@
  Contains logic for handling query filter configurations.
 */
 use chrono::prelude::*;
+use serde::Serialize;
 
 use crate::{
     error::query_context::QueryContextError,
     util::dates::{get_offset, TIMESTAMP_FACTOR},
 };
 
-#[derive(Debug, Default, PartialEq, Eq)]
+#[derive(Debug, Default, PartialEq, Eq, Serialize)]
 /// Represents filter configurations for a SQL query.
 pub struct QueryContext {
     /// The start date filter. Only messages sent on or after this date will be included.

@@ -2,6 +2,8 @@
  This module contains Data structures and models that represent message data.
 */
 
+use serde::Serialize;
+
 use crate::message_types::text_effects::TextEffect;
 
 /// Defines the parts of a message bubble, i.e. the content that can exist in a single message.
@@ -11,7 +13,7 @@ use crate::message_types::text_effects::TextEffect;
 /// A single iMessage contains data that may be represented across multiple bubbles.
 ///
 /// iMessage bubbles can only contain data of one variant of this enum at a time.
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub enum BubbleComponent<'a> {
     /// A text message with associated formatting, generally representing ranges present in a `NSAttributedString`
     Text(Vec<TextAttributes<'a>>),
@@ -24,7 +26,7 @@ pub enum BubbleComponent<'a> {
 }
 
 /// Defines different types of services we can receive messages from.
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub enum Service<'a> {
     /// An iMessage
     #[allow(non_camel_case_types)]
@@ -59,7 +61,7 @@ pub enum Service<'a> {
 ///     TextAttributes::new(22, 23, TextEffect::Default)  // `?`
 /// ])];
 /// ```
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub struct TextAttributes<'a> {
     /// The start index of the affected range of message text
     pub start: usize,

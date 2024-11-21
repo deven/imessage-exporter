@@ -5,6 +5,7 @@
 */
 
 use plist::Value;
+use serde::Serialize;
 
 use crate::{
     error::plist::PlistParseError,
@@ -18,7 +19,7 @@ use crate::{
 };
 
 /// The type of edit performed to a message body part
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub enum EditStatus {
     /// The content of the message body part was altered
     Edited,
@@ -29,7 +30,7 @@ pub enum EditStatus {
 }
 
 /// Represents a single edit event for a message part
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub struct EditedEvent {
     /// The date the message part was edited
     pub date: i64,
@@ -46,7 +47,7 @@ impl EditedEvent {
 }
 
 /// Tracks the edit status and history for a specific part of a message
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub struct EditedMessagePart {
     /// The type of edit made to the given message part
     pub status: EditStatus,
@@ -92,7 +93,7 @@ impl Default for EditedMessagePart {
 /// # Documentation
 ///
 /// Apple describes editing and unsending messages [here](https://support.apple.com/guide/iphone/unsend-and-edit-messages-iphe67195653/ios).
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub struct EditedMessage {
     /// Contains data representing each part of an edited message
     pub parts: Vec<EditedMessagePart>,

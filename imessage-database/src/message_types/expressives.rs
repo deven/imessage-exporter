@@ -2,10 +2,12 @@
  [Expressives](https://support.apple.com/en-us/HT206894) are effects that you can select by tapping and holding the send button.
 */
 
+use serde::Serialize;
+
 /// Bubble effects are effects that alter the display of the chat bubble.
 ///
 /// Read more [here](https://www.imore.com/how-to-use-bubble-and-screen-effects-imessage-iphone-ipad).
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub enum BubbleEffect {
     Slam,
     Loud,
@@ -16,7 +18,7 @@ pub enum BubbleEffect {
 /// Screen effects are effects that alter the entire background of the message view.
 ///
 /// Read more [here](https://www.imore.com/how-to-use-bubble-and-screen-effects-imessage-iphone-ipad).
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub enum ScreenEffect {
     Confetti,
     Echo,
@@ -49,7 +51,7 @@ pub enum ScreenEffect {
 /// - `com.apple.messages.effect.CKShootingStarEffect`
 /// - `com.apple.messages.effect.CKSparklesEffect`
 /// - `com.apple.messages.effect.CKSpotlightEffect`
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub enum Expressive<'a> {
     /// Effects that use the entire screen
     Screen(ScreenEffect),

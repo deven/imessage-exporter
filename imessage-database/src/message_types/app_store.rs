@@ -3,6 +3,7 @@
 */
 
 use plist::Value;
+use serde::Serialize;
 
 use crate::{
     error::plist::PlistParseError,
@@ -12,7 +13,7 @@ use crate::{
 
 /// This struct is not documented by Apple, but represents messages displayed as
 /// `com.apple.messages.URLBalloonProvider` but for App Store apps
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub struct AppStoreMessage<'a> {
     /// The URL that ended up serving content, after all redirects
     pub url: Option<&'a str>,

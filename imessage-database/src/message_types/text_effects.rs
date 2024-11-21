@@ -2,12 +2,14 @@
  Effects that can alter the appearance of message text.
 */
 
+use serde::Serialize;
+
 /// Text effect container
 ///
 /// Message text may contain any number of traditional styles or one animation.
 ///
 /// Read more about text styles [here](https://www.apple.com/newsroom/2024/06/ios-18-makes-iphone-more-personal-capable-and-intelligent-than-ever/).
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub enum TextEffect<'a> {
     /// Default, unstyled text
     Default,
@@ -38,7 +40,7 @@ pub enum TextEffect<'a> {
 /// Unit conversion text effect container
 ///
 /// Read more about unit conversions [here](https://www.macrumors.com/how-to/convert-currencies-temperatures-more-ios-16/).
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub enum Unit {
     Currency,
     Distance,
@@ -51,7 +53,7 @@ pub enum Unit {
 /// Traditional text effect container
 ///
 /// Read more about text styles [here](https://www.apple.com/newsroom/2024/06/ios-18-makes-iphone-more-personal-capable-and-intelligent-than-ever/).
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub enum Style {
     /// **Bold** styled text
     Bold,
@@ -68,7 +70,7 @@ pub enum Style {
 /// A message's [`typedstream`](crate::util::typedstream) contains an [`i64`] identifier under the key `__kIMTextEffectAttributeName`.
 ///
 /// Read more about text styles [here](https://www.apple.com/newsroom/2024/06/ios-18-makes-iphone-more-personal-capable-and-intelligent-than-ever/).
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub enum Animation {
     /// Denoted by an ID of `5`
     Big,

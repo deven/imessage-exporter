@@ -4,12 +4,14 @@
 
 use std::fmt::{Display, Formatter, Result};
 
+use serde_with::SerializeDisplay;
+
 use crate::error::{plist::PlistParseError, streamtyped::StreamTypedError};
 
 use super::typedstream::TypedStreamError;
 
 /// Errors that can happen when working with message table data
-#[derive(Debug)]
+#[derive(Debug, SerializeDisplay)]
 pub enum MessageError {
     MissingData,
     NoText,

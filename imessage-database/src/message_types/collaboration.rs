@@ -3,6 +3,7 @@
 */
 
 use plist::Value;
+use serde::Serialize;
 
 use crate::{
     error::plist::PlistParseError,
@@ -12,7 +13,7 @@ use crate::{
 
 /// This struct is not documented by Apple, but represents messages displayed as
 /// `com.apple.messages.URLBalloonProvider` but from [Rich Collaboration](https://developer.apple.com/videos/play/wwdc2022/10095/) messages
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Serialize)]
 pub struct CollaborationMessage<'a> {
     /// The URL the user interacts with to start the share session
     pub original_url: Option<&'a str>,

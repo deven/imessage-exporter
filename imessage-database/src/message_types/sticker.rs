@@ -4,6 +4,8 @@ These are [sticker messages](https://support.apple.com/guide/iphone/send-sticker
 
 use std::fmt::Display;
 
+use serde::Serialize;
+
 /// Bytes for `stickerEffect:type="`
 const STICKER_EFFECT_PREFIX: [u8; 20] = [
     115, 116, 105, 99, 107, 101, 114, 69, 102, 102, 101, 99, 116, 58, 116, 121, 112, 101, 61, 34,
@@ -12,7 +14,7 @@ const STICKER_EFFECT_PREFIX: [u8; 20] = [
 const STICKER_EFFECT_SUFFIX: [u8; 3] = [34, 47, 62];
 
 /// Represents different types of [sticker effects](https://www.macrumors.com/how-to/add-effects-to-stickers-in-messages/) that can be applied to sticker iMessage balloons.
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub enum StickerEffect {
     /// Sticker sent with no effect
     Normal,

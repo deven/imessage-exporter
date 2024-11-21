@@ -5,6 +5,7 @@
 use std::fmt::Display;
 
 use plist::Value;
+use serde::Serialize;
 
 use crate::{
     error::plist::PlistParseError,
@@ -42,7 +43,7 @@ use crate::{
 /// - 3 is the text of the message
 ///
 /// In this example, a Like on `p:2/` is a like on the third image.
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub enum Tapback<'a> {
     /// Heart
     Loved,
@@ -76,7 +77,7 @@ impl<'a> Display for Tapback<'a> {
 ///
 /// Messages sent via an app's iMessage integration will send in a special balloon instead of a normal
 /// text balloon. This represents the different variants of message balloon.
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub enum CustomBalloon<'a> {
     /// Generic third party [applications](crate::message_types::app)
     Application(&'a str),
@@ -102,7 +103,7 @@ pub enum CustomBalloon<'a> {
 ///
 /// Apple sometimes overloads `com.apple.messages.URLBalloonProvider` with
 /// other types of messages; this enum represents those variants.
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub enum URLOverride<'a> {
     /// [`URL`](crate::message_types::url) previews
     Normal(URLMessage<'a>),
@@ -120,7 +121,7 @@ pub enum URLOverride<'a> {
 ///
 /// Announcements are messages sent to a thread for actions that are not balloons, i.e.
 /// updating the name of the group or changing the group photo
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub enum Announcement<'a> {
     /// Someone changed the name of the group
     NameChange(&'a str),
@@ -136,7 +137,7 @@ pub enum Announcement<'a> {
 ///
 /// Messages can exist as one of many different variants, this encapsulates
 /// all of the possibilities.
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub enum Variant<'a> {
     /// A [tapback](https://support.apple.com/guide/messages/react-with-tapbacks-icht504f698a/mac)
     ///

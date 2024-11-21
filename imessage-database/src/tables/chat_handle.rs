@@ -4,6 +4,8 @@
 
 use std::collections::{BTreeSet, HashMap, HashSet};
 
+use serde::Serialize;
+
 use crate::{
     error::table::TableError,
     tables::table::{
@@ -14,6 +16,7 @@ use crate::{
 use rusqlite::{Connection, Error, Result, Row, Statement};
 
 /// Represents a single row in the `chat_handle_join` table.
+#[derive(Debug, Serialize)]
 pub struct ChatToHandle {
     chat_id: i32,
     handle_id: i32,

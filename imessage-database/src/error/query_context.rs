@@ -4,8 +4,10 @@
 
 use std::fmt::{Display, Formatter, Result};
 
+use serde_with::SerializeDisplay;
+
 /// Errors that can happen when parsing query context data
-#[derive(Debug)]
+#[derive(Debug, SerializeDisplay)]
 pub enum QueryContextError {
     InvalidDate(String),
 }

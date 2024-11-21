@@ -5,6 +5,8 @@
 use std::fmt::Write;
 use std::io::Cursor;
 
+use serde::Serialize;
+
 use crate::{
     error::handwriting::HandwritingError,
     message_types::handwriting::handwriting_proto::{BaseMessage, Compression},
@@ -16,7 +18,7 @@ use protobuf::Message;
 ///
 /// This message type is not documented by Apple, but represents messages displayed as
 /// `com.apple.Handwriting.HandwritingProvider`.
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub struct HandwrittenMessage {
     pub id: String,
     /// Timestamp for when the handwritten message was created, stored as a unix timestamp with an epoch of `2001-01-01 00:00:00` in the local time zone
@@ -28,7 +30,7 @@ pub struct HandwrittenMessage {
 }
 
 /// Represents a point along a handwritten line.
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub struct Point {
     pub x: u16,
     pub y: u16,

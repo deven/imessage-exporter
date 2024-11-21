@@ -3,6 +3,7 @@
 */
 
 use plist::Value;
+use serde::Serialize;
 
 use crate::{
     error::plist::PlistParseError,
@@ -12,7 +13,7 @@ use crate::{
 
 /// This struct is not documented by Apple, but represents messages displayed as
 /// `com.apple.messages.URLBalloonProvider` but from the Music app
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub struct MusicMessage<'a> {
     /// URL in Apple Music
     pub url: Option<&'a str>,

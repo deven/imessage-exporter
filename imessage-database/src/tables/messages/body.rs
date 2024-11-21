@@ -1,3 +1,5 @@
+use serde::Serialize;
+
 use crate::{
     message_types::{
         edited::EditStatus,
@@ -17,6 +19,7 @@ const APP_CHAR: char = '\u{FFFD}';
 /// A collection of characters that represent non-text content within body text
 const REPLACEMENT_CHARS: [char; 2] = [ATTACHMENT_CHAR, APP_CHAR];
 
+#[derive(Debug, Serialize)]
 pub enum BubbleResult<'a> {
     New(BubbleComponent<'a>),
     Continuation(TextAttributes<'a>),

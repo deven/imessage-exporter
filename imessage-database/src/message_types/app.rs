@@ -6,6 +6,7 @@
 use std::collections::HashMap;
 
 use plist::Value;
+use serde::Serialize;
 
 use crate::{
     error::plist::PlistParseError,
@@ -14,7 +15,7 @@ use crate::{
 };
 
 /// This struct represents Apple's [`MSMessageTemplateLayout`](https://developer.apple.com/documentation/messages/msmessagetemplatelayout).
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub struct AppMessage<'a> {
     /// An image used to represent the message in the transcript
     pub image: Option<&'a str>,

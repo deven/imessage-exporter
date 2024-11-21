@@ -2,8 +2,10 @@
  Data structures and models used by the `typedstream` parser.
 */
 
+use serde::Serialize;
+
 /// Represents a class stored in the `typedstream`
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
 pub struct Class {
     /// The name of the class
     pub name: String,
@@ -18,7 +20,7 @@ impl Class {
 }
 
 /// Rust structures containing data stored in the `typedstream`
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize)]
 pub enum OutputData {
     /// Text data
     String(String),
@@ -39,7 +41,7 @@ pub enum OutputData {
 }
 
 /// Types of data that can be archived into the `typedstream`
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize)]
 pub enum Archivable {
     /// An instance of a class that may contain some embedded data. `typedstream` data doesn't include property
     /// names, so data is stored in order of appearance.
@@ -135,7 +137,7 @@ impl Archivable {
 
 /// Represents primitive types of data that can be stored in a `typedstream`
 // TODO: Remove clone
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize)]
 pub enum Type {
     /// Encoded string data, usually embedded in an object. Denoted by:
     /// - Hex: `0x2B`, UTF-8: [`+`](https://www.compart.com/en/unicode/U+002B)
@@ -214,7 +216,7 @@ impl Type {
 }
 
 /// Represents data that results from attempting to parse a class from the `typedstream`
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub(crate) enum ClassResult {
     /// A reference to an already-seen class in the [`TypedStreamReader::object_table`](crate::util::typedstream::parser::TypedStreamReader::object_table)
     Index(usize),

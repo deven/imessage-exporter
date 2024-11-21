@@ -7,8 +7,10 @@ use std::{
     io::Error,
 };
 
+use serde_with::SerializeDisplay;
+
 /// Errors that can happen when working with attachment table data
-#[derive(Debug)]
+#[derive(Debug, SerializeDisplay)]
 pub enum AttachmentError {
     FileNotFound(String),
     Unreadable(String, Error),

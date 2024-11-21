@@ -2,8 +2,10 @@
  This module represents common (but not all) columns in the `handle` table.
 */
 
-use rusqlite::{Connection, Error, Result, Row, Statement};
 use std::collections::{BTreeSet, HashMap};
+
+use rusqlite::{Connection, Error, Result, Row, Statement};
+use serde::Serialize;
 
 use crate::{
     error::table::TableError,
@@ -12,7 +14,7 @@ use crate::{
 };
 
 /// Represents a single row in the `handle` table.
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct Handle {
     pub rowid: i32,
     pub id: String,

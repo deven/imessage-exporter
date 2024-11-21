@@ -4,8 +4,10 @@
 
 use std::fmt::{Display, Formatter, Result};
 
+use serde_with::SerializeDisplay;
+
 /// Errors that can happen when parsing `handwriting` data
-#[derive(Debug)]
+#[derive(Debug, SerializeDisplay)]
 pub enum HandwritingError {
     ProtobufError(protobuf::Error),
     InvalidFrameSize(usize),

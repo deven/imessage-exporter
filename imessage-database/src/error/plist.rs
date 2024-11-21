@@ -6,8 +6,10 @@ use crate::error::handwriting::HandwritingError;
 use crate::error::streamtyped::StreamTypedError;
 use std::fmt::{Display, Formatter, Result};
 
+use serde_with::SerializeDisplay;
+
 /// Errors that can happen when parsing the plist data stored in the `payload_data` field
-#[derive(Debug)]
+#[derive(Debug, SerializeDisplay)]
 pub enum PlistParseError {
     MissingKey(String),
     NoValueAtIndex(usize),

@@ -3,6 +3,7 @@
 */
 
 use rusqlite::{Connection, Error, Result, Row, Statement};
+use serde::Serialize;
 use sha1::{Digest, Sha1};
 use std::{
     fs::File,
@@ -33,7 +34,7 @@ pub const DEFAULT_ATTACHMENT_ROOT: &str = "~/Library/Messages/Attachments";
 /// Represents the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_Types) of a message's attachment data
 ///
 /// The interior `str` contains the subtype, i.e. `x-m4a` for `audio/x-m4a`
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub enum MediaType<'a> {
     Image(&'a str),
     Video(&'a str),
@@ -45,7 +46,7 @@ pub enum MediaType<'a> {
 }
 
 /// Represents a single row in the `attachment` table.
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct Attachment {
     pub rowid: i32,
     /// The path to the file on disk

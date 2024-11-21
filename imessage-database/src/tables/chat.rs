@@ -5,6 +5,7 @@
 use std::collections::HashMap;
 
 use rusqlite::{Connection, Error, Result, Row, Statement};
+use serde::Serialize;
 
 use crate::{
     error::table::TableError,
@@ -12,7 +13,7 @@ use crate::{
 };
 
 /// Represents a single row in the `chat` table.
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct Chat {
     pub rowid: i32,
     pub chat_identifier: String,

@@ -7,8 +7,10 @@ use std::{
     fmt::{Display, Formatter, Result}, str::Utf8Error,
 };
 
+use serde_with::SerializeDisplay;
+
 /// Errors that can happen when parsing `typedstream` data
-#[derive(Debug)]
+#[derive(Debug, SerializeDisplay)]
 pub enum TypedStreamError {
     OutOfBounds(usize, usize),
     InvalidHeader,

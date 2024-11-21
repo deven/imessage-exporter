@@ -4,10 +4,12 @@
 
 use std::{fmt::Display, path::Path};
 
+use serde::Serialize;
+
 use crate::tables::table::DEFAULT_PATH_IOS;
 
 /// Represents the platform that created the database this library connects to
-#[derive(PartialEq, Eq, Debug)]
+#[derive(PartialEq, Eq, Debug, Serialize)]
 pub enum Platform {
     /// macOS-sourced data
     #[allow(non_camel_case_types)]

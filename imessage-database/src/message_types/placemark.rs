@@ -3,6 +3,7 @@
 */
 
 use plist::Value;
+use serde::Serialize;
 
 use crate::{
     error::plist::PlistParseError,
@@ -11,7 +12,7 @@ use crate::{
 };
 
 /// Representation of Apple's [`CLPlacemark`](https://developer.apple.com/documentation/corelocation/clplacemark) object
-#[derive(Debug, PartialEq, Eq, Default)]
+#[derive(Debug, PartialEq, Eq, Default, Serialize)]
 pub struct Placemark<'a> {
     /// The name of the placemark
     pub name: Option<&'a str>,
@@ -69,7 +70,7 @@ impl<'a> Placemark<'a> {
 
 /// This struct is not documented by Apple, but represents messages displayed as
 /// `com.apple.messages.URLBalloonProvider` but for the Maps app
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Serialize)]
 pub struct PlacemarkMessage<'a> {
     /// The URL that ended up serving content, after all redirects
     pub url: Option<&'a str>,

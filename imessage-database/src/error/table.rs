@@ -4,8 +4,10 @@
 
 use std::fmt::{Display, Formatter, Result};
 
+use serde_with::SerializeDisplay;
+
 /// Errors that can happen when extracting data from a `SQLite` table
-#[derive(Debug)]
+#[derive(Debug, SerializeDisplay)]
 pub enum TableError {
     Attachment(rusqlite::Error),
     ChatToHandle(rusqlite::Error),
@@ -14,6 +16,13 @@ pub enum TableError {
     Messages(rusqlite::Error),
     CannotConnect(String),
     CannotRead(std::io::Error),
+    JsonError(serde_json::Error),
+}
+
+impl From<serde_json::Error> for TableError {
+    fn from(error: serde_json::Error) -> Self {
+        TableError::JsonError(error)
+    }
 }
 
 impl Display for TableError {
@@ -26,6 +35,7 @@ impl Display for TableError {
             TableError::Messages(why) => write!(fmt, "Failed to parse messages row: {why}"),
             TableError::CannotConnect(why) => write!(fmt, "{why}"),
             TableError::CannotRead(why) => write!(fmt, "{why}"),
+            TableError::JsonError(why) => write!(fmt, "{why}"),
         }
     }
 }
