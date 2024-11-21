@@ -24,6 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_5_1;
 
+#[derive(::serde::Serialize)]
 // @@protoc_insertion_point(message:handwriting.BaseMessage)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct BaseMessage {
@@ -32,9 +33,11 @@ pub struct BaseMessage {
     pub CreatedAt: i64,
     // @@protoc_insertion_point(field:handwriting.BaseMessage.ID)
     pub ID: ::std::string::String,
+    #[serde(serialize_with = "crate::serialize_message_field")]
     // @@protoc_insertion_point(field:handwriting.BaseMessage.Handwriting)
     pub Handwriting: ::protobuf::MessageField<Handwriting>,
     // special fields
+    #[serde(skip)]
     // @@protoc_insertion_point(special_field:handwriting.BaseMessage.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
@@ -183,6 +186,7 @@ impl ::protobuf::reflect::ProtobufValue for BaseMessage {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
+#[derive(::serde::Serialize)]
 // @@protoc_insertion_point(message:handwriting.Handwriting)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct Handwriting {
@@ -191,6 +195,7 @@ pub struct Handwriting {
     pub Frame: ::std::vec::Vec<u8>,
     // @@protoc_insertion_point(field:handwriting.Handwriting.StrokesCount)
     pub StrokesCount: i64,
+    #[serde(serialize_with = "crate::serialize_enum_or_unknown")]
     // @@protoc_insertion_point(field:handwriting.Handwriting.Compression)
     pub Compression: ::protobuf::EnumOrUnknown<Compression>,
     // @@protoc_insertion_point(field:handwriting.Handwriting.DecompressedLength)
@@ -198,6 +203,7 @@ pub struct Handwriting {
     // @@protoc_insertion_point(field:handwriting.Handwriting.Strokes)
     pub Strokes: ::std::vec::Vec<u8>,
     // special fields
+    #[serde(skip)]
     // @@protoc_insertion_point(special_field:handwriting.Handwriting.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
@@ -378,6 +384,7 @@ impl ::protobuf::reflect::ProtobufValue for Handwriting {
 }
 
 #[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
+#[derive(::serde::Serialize)]
 // @@protoc_insertion_point(enum:handwriting.Compression)
 pub enum Compression {
     // @@protoc_insertion_point(enum_value:handwriting.Compression.Unknown)

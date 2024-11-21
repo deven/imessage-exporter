@@ -24,10 +24,12 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_5_1;
 
+#[derive(::serde::Serialize)]
 // @@protoc_insertion_point(message:digital_touch.BaseMessage)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct BaseMessage {
     // message fields
+    #[serde(serialize_with = "crate::serialize_enum_or_unknown")]
     // @@protoc_insertion_point(field:digital_touch.BaseMessage.TouchKind)
     pub TouchKind: ::protobuf::EnumOrUnknown<TouchKind>,
     // @@protoc_insertion_point(field:digital_touch.BaseMessage.TouchPayload)
@@ -35,6 +37,7 @@ pub struct BaseMessage {
     // @@protoc_insertion_point(field:digital_touch.BaseMessage.ID)
     pub ID: ::std::string::String,
     // special fields
+    #[serde(skip)]
     // @@protoc_insertion_point(special_field:digital_touch.BaseMessage.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
@@ -182,6 +185,7 @@ impl ::protobuf::reflect::ProtobufValue for BaseMessage {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
+#[derive(::serde::Serialize)]
 // @@protoc_insertion_point(message:digital_touch.TapMessage)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct TapMessage {
@@ -193,6 +197,7 @@ pub struct TapMessage {
     // @@protoc_insertion_point(field:digital_touch.TapMessage.Color)
     pub Color: ::std::vec::Vec<u8>,
     // special fields
+    #[serde(skip)]
     // @@protoc_insertion_point(special_field:digital_touch.TapMessage.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
@@ -340,6 +345,7 @@ impl ::protobuf::reflect::ProtobufValue for TapMessage {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
+#[derive(::serde::Serialize)]
 // @@protoc_insertion_point(message:digital_touch.SketchMessage)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct SketchMessage {
@@ -351,6 +357,7 @@ pub struct SketchMessage {
     // @@protoc_insertion_point(field:digital_touch.SketchMessage.Colors)
     pub Colors: ::std::vec::Vec<u8>,
     // special fields
+    #[serde(skip)]
     // @@protoc_insertion_point(special_field:digital_touch.SketchMessage.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
@@ -498,6 +505,7 @@ impl ::protobuf::reflect::ProtobufValue for SketchMessage {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
+#[derive(::serde::Serialize)]
 // @@protoc_insertion_point(message:digital_touch.KissMessage)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct KissMessage {
@@ -509,6 +517,7 @@ pub struct KissMessage {
     // @@protoc_insertion_point(field:digital_touch.KissMessage.Rotations)
     pub Rotations: ::std::vec::Vec<u8>,
     // special fields
+    #[serde(skip)]
     // @@protoc_insertion_point(special_field:digital_touch.KissMessage.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
@@ -656,6 +665,7 @@ impl ::protobuf::reflect::ProtobufValue for KissMessage {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
+#[derive(::serde::Serialize)]
 // @@protoc_insertion_point(message:digital_touch.HeartbeatMessage)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct HeartbeatMessage {
@@ -667,6 +677,7 @@ pub struct HeartbeatMessage {
     // @@protoc_insertion_point(field:digital_touch.HeartbeatMessage.HeartBrokenAt)
     pub HeartBrokenAt: f32,
     // special fields
+    #[serde(skip)]
     // @@protoc_insertion_point(special_field:digital_touch.HeartbeatMessage.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
@@ -814,6 +825,7 @@ impl ::protobuf::reflect::ProtobufValue for HeartbeatMessage {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
+#[derive(::serde::Serialize)]
 // @@protoc_insertion_point(message:digital_touch.FireballMessage)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct FireballMessage {
@@ -829,6 +841,7 @@ pub struct FireballMessage {
     // @@protoc_insertion_point(field:digital_touch.FireballMessage.Points)
     pub Points: ::std::vec::Vec<u8>,
     // special fields
+    #[serde(skip)]
     // @@protoc_insertion_point(special_field:digital_touch.FireballMessage.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
@@ -1009,6 +1022,7 @@ impl ::protobuf::reflect::ProtobufValue for FireballMessage {
 }
 
 #[derive(Clone,Copy,PartialEq,Eq,Debug,Hash)]
+#[derive(::serde::Serialize)]
 // @@protoc_insertion_point(enum:digital_touch.TouchKind)
 pub enum TouchKind {
     // @@protoc_insertion_point(enum_value:digital_touch.TouchKind.Unknown)
